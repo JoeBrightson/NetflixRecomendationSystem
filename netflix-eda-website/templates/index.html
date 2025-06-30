@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Netflix Dataset Analysis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: url('https://wallpaperaccess.com/full/2703652.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.85);
+      min-height: 100vh;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: #e50914;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .subheading {
+      font-size: 1.2rem;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .icons {
+      margin-bottom: 30px;
+    }
+
+    .icons img {
+      width: 70px;
+      margin: 0 20px;
+      filter: drop-shadow(0 0 8px #e50914aa);
+    }
+
+    form {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    button {
+      background-color: #e50914;
+      border: none;
+      padding: 15px 20px;
+      font-size: 16px;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    }
+
+    button:hover {
+      background-color: #b0060e;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>🎬 Netflix Data Analysis</h1>
+    <p class="subheading">Explore content insights, trends, genres & more</p>
+
+    <div class="icons">
+      <img src="https://cdn-icons-png.flaticon.com/512/3208/3208728.png" alt="Reel">
+      <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="TV">
+      <img src="https://cdn-icons-png.flaticon.com/512/2949/2949031.png" alt="Popcorn">
+    </div>
+
+    <form action="/visualize" method="get">
+      <button name="chart" value="type">Type Distribution</button>
+      <button name="chart" value="title">All Titles</button>
+      <button name="chart" value="director">Directors & Movies (IMDb)</button>
+      <button name="chart" value="cast">Cast Members</button>
+      <button name="chart" value="country">Top Countries</button>
+      <button name="chart" value="rating">Ratings</button>
+      <button name="chart" value="duration">Durations</button>
+      <button name="chart" value="genre">Top Genres</button>
+      <button name="chart" value="description">Descriptions with Titles</button>
+      <button name="chart" value="release">Release Years</button>
+      <button name="chart" value="year">Year Added</button>
+      <button name="chart" value="missing">Missing Values</button>
+    </form>
+
+    <footer>© 2025 Netflix Data Analysis | Designed by Joe_Brightson</footer>
+  </div>
+</body>
+</html>

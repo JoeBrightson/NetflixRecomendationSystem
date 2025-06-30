@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .hero {
+      background-image: url("{% if 'TYPE' in title %}https://cdn-icons-png.flaticon.com/512/3208/3208728.png
+      {% elif 'GENRE' in title %}https://cdn-icons-png.flaticon.com/512/2949/2949031.png
+      {% elif 'RATING' in title or 'RELEASE' in title %}https://cdn-icons-png.flaticon.com/512/1828/1828911.png
+      {% elif 'CAST' in title %}https://cdn-icons-png.flaticon.com/512/4711/4711445.png
+      {% elif 'DIRECTOR' in title %}https://cdn-icons-png.flaticon.com/512/2922/2922037.png
+      {% elif 'DESCRIPTION' in title %}https://cdn-icons-png.flaticon.com/512/4438/4438236.png
+      {% elif 'MISSING' in title %}https://cdn-icons-png.flaticon.com/512/1828/1828843.png
+      {% elif 'COUNTRY' in title %}https://cdn-icons-png.flaticon.com/512/197/197484.png
+      {% else %}https://cdn-icons-png.flaticon.com/512/1170/1170678.png{% endif %}");
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 100px;
+      padding-top: 120px;
+      padding-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.6rem;
+      color: #e50914;
+      text-shadow: 2px 2px 4px #000;
+      margin-bottom: 20px;
+    }
+
+    pre {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>{{ title }}</h1>
+  </div>
+
+  {% if image %}
+    <img src="{{ url_for('static', filename=image) }}" alt="Chart" class="chart">
+  {% elif text %}
+    <pre>{{ text }}</pre>
+  {% endif %}
+
+  <div style="text-align: center;">
+    <a href="/" class="back-btn">⬅ Back to Dashboard</a>
+  </div>
+
+  <footer>
+    Netflix EDA Capstone | Flask • Python • 2025
+  </footer>
+</body>
+</html>
